@@ -11,6 +11,8 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        '''intializer function'''
+
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -34,6 +36,8 @@ class Server:
         return (start_index, end_index)
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        '''returns appropriate pages from the datafile'''
+
         assert type(page) == int and page > 0
         assert type(page_size) == int and page_size > 0
         ranges = self.index_range(page, page_size)
